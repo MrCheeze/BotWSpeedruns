@@ -35,9 +35,9 @@ extern unsigned int nfp_handle;
 void InitNFPFunctionPointers(void);
 void InitAcquireNFP(void);
 
-extern int (*SwitchToAmiiboSettings__Q2_2nn3nfpFRCQ3_2nn3nfp20AmiiboSettingsArgsInPCcUi)(const AmiiboSettingsArgs *settings, const char *str, unsigned int val);
+extern int (*SwitchToAmiiboSettings__Q2_2nn3nfpFRCQ3_2nn3nfp20AmiiboSettingsArgsInPCcUi)(const AmiiboSettingsArgs *settings, const char *str, u32 val);
 
-extern int (*GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo)(unsigned int* ptr);
+extern int (*GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo)(u32* ptr);
 
 #ifdef __cplusplus
 }
