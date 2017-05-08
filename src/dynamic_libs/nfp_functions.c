@@ -29,6 +29,7 @@ unsigned int nfp_handle __attribute__((section(".data"))) = 0;
 
 EXPORT_DECL(int, SwitchToAmiiboSettings__Q2_2nn3nfpFRCQ3_2nn3nfp20AmiiboSettingsArgsInPCcUi, const AmiiboSettingsArgs *settings, const char *str, u32 val);
 EXPORT_DECL(int, GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo, u32* ptr);
+EXPORT_DECL(int, GetTagInfo__Q2_2nn3nfpFPQ3_2nn3nfp7TagInfo, NFPTagInfo* taginfo);
 
 void InitAcquireNFP(void)
 {
@@ -48,4 +49,5 @@ void InitNFPFunctionPointers(void)
 
     OS_FIND_EXPORT(nfp_handle, SwitchToAmiiboSettings__Q2_2nn3nfpFRCQ3_2nn3nfp20AmiiboSettingsArgsInPCcUi);
 	OS_FIND_EXPORT(nfp_handle, GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo);
+	OS_FIND_EXPORT(nfp_handle, GetTagInfo__Q2_2nn3nfpFPQ3_2nn3nfp7TagInfo);
 }

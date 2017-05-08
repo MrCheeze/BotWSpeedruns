@@ -51,6 +51,8 @@ u8 g_remapsButtonCount = 0;
 u8 g_remapsAmiibo[512];
 u8 g_remapsAmiiboCount = 0;
 
+u32 g_serialCounter = 0;
+
 /* Entry point */
 int Menu_Main(void)
 {

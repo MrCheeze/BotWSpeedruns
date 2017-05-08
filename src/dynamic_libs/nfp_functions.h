@@ -39,6 +39,8 @@ extern int (*SwitchToAmiiboSettings__Q2_2nn3nfpFRCQ3_2nn3nfp20AmiiboSettingsArgs
 
 extern int (*GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo)(u32* ptr);
 
+extern int (*GetTagInfo__Q2_2nn3nfpFPQ3_2nn3nfp7TagInfo)(NFPTagInfo* taginfo);
+
 #ifdef __cplusplus
 }
 #endif

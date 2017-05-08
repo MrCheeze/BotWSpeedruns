@@ -171,6 +171,20 @@ DECL(int, GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo, NFPRomInfo *romInfo)
 	return result;
 }
 
+//Amiibo serial number modification
+DECL(int, GetTagInfo__Q2_2nn3nfpFPQ3_2nn3nfp7TagInfo, NFPTagInfo* taginfo)
+{
+	int result = real_GetTagInfo__Q2_2nn3nfpFPQ3_2nn3nfp7TagInfo(taginfo);
+
+	if (g_gameRunning)
+	{
+		g_serialCounter++;
+		*(u32*)taginfo += g_serialCounter;
+	}
+
+	return result;
+}
+
 //Gets called whenever the system polls the WiiU Gamepad
 DECL(int, VPADRead, int chan, VPADData *buffer, u32 buffer_size, s32 *error)
 {
@@ -389,6 +403,7 @@ method_hooks[] =
 	MAKE_MAGIC(UCReadSysConfig,									LIB_CORE_INIT,STATIC_FUNCTION),
 	MAKE_MAGIC(MCP_GetSysProdSettings,							LIB_CORE_INIT,STATIC_FUNCTION),
 	MAKE_MAGIC(GetNfpRomInfo__Q2_2nn3nfpFPQ3_2nn3nfp7RomInfo,	LIB_NN_NFP,DYNAMIC_FUNCTION),
+	MAKE_MAGIC(GetTagInfo__Q2_2nn3nfpFPQ3_2nn3nfp7TagInfo,		LIB_NN_NFP,DYNAMIC_FUNCTION),
 	MAKE_MAGIC(VPADRead,										LIB_VPAD,STATIC_FUNCTION),
 	MAKE_MAGIC(KPADReadEx,										LIB_PADSCORE,DYNAMIC_FUNCTION),
 };

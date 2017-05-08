@@ -36,6 +36,8 @@ extern u8 g_remapsButtonCount;
 extern u8 g_remapsAmiibo[512];
 extern u8 g_remapsAmiiboCount;
 
+extern u32 g_serialCounter;
+
 #ifdef __cplusplus
 }
 #endif
